@@ -37,4 +37,10 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual([1, 3, 5, 7, 9], ans)
         ans.clear()
 
+        for i in range(10, 0, -1):
+            ans.append(i)
+
+        self.assertEqual([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], ans)
+        ans.clear()
+
     # def test_04(self):
