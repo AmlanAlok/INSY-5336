@@ -94,13 +94,66 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(m, max(user))
 
     'program to print the number of vowels in a string'
+
     def test_07(self):
-        ans = []
+        ans = ''
         user = 'i love uta'
-        vowels = ['a', 'e', 'i', 'o', 'u']
+        vowels = 'aeiou'
         for i in user:
             if i in vowels:
-                ans.append(i)
+                ans += i
 
-        self.assertEqual(['i', 'o', 'e', 'u', 'a'], ans)
+        self.assertEqual('ioeua', ans)
         self.assertEqual(5, len(ans))
+
+    'find the longest word in a string'
+
+    def test_08_my_way(self):
+        ans = ''
+        user = 'i love uta'
+        m, t = 0, 0
+        temp = ''
+        for i in user:
+            if i == ' ':
+                if len(temp) > m:
+                    ans, m = temp, t
+                    temp, t = '', 0
+            else:
+                temp += i
+                t += 1
+
+        if len(temp) > m:
+            ans, m = temp, t
+            temp, t = '', 0
+        print(ans)
+
+        self.assertEqual('love', ans)
+        self.assertEqual(4, m)
+
+    def test_08_prof(self):
+        ans = ''
+        user = 'i love uta'
+        longest = ''
+        for i in user.split():
+            if len(i) > len(longest):
+                longest = i
+
+        self.assertEqual('love', longest)
+
+    'Exercise 2 in Class_3_Loops'
+
+    def test_exercise2(self):
+
+        lo, hi = 0, 10
+
+        if lo > hi:
+            lo, hi = hi, lo
+        subtotal = []
+        s = 0
+        for i in range(lo, hi + 1):
+            s += i
+            print(s)
+            subtotal.append(s)
+
+        print(subtotal)
+        self.assertEqual(220, sum(subtotal))
