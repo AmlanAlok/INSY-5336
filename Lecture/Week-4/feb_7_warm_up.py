@@ -97,13 +97,13 @@ class MyTestCase(unittest.TestCase):
 
     def test_07(self):
         ans = ''
-        user = 'i love uta'
-        vowels = 'aeiou'
+        user = 'i love utA'
+        vowels = 'aeiouAEIOU'
         for i in user:
             if i in vowels:
                 ans += i
 
-        self.assertEqual('ioeua', ans)
+        self.assertEqual('ioeuA', ans)
         self.assertEqual(5, len(ans))
 
     'find the longest word in a string'
