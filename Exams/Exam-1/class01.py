@@ -1,18 +1,18 @@
 
+def average(*numbers):
+    sum = 0
+    for number in numbers:
+        sum += number
+    return sum / len(numbers)
 
 
 if __name__ == '__main__':
-    price = 1000
-    TAX = 0.03
-    tax_amount = price * TAX
-    final_price = price + tax_amount
-    print()
-    title = "House Price"
-    print(f"{title:^50}")
-    print("______________________________________________")
-    print(f"Initial price: ${price:,.3f}")
-    print("______________________________________________")
-    print(f"Tax rate: {TAX:.0%}")
-    print(f"Tax amount: ${tax_amount:,.3f}")
-    print("______________________________________________")
-    print(f"Final price: ${final_price:,.3f}")
+    # arbitrary arguments
+    # result = average(1, 2, 3, 4, 5)
+    # print("The average is:", result)
+
+    dict1 = {1: 'A', 2: 'B', 3: 'C'}
+
+    # List of the keys
+    keysList = list(dict1.keys())
+    print(keysList)
