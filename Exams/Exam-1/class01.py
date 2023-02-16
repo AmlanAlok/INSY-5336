@@ -7,12 +7,9 @@ def average(*numbers):
 
 
 if __name__ == '__main__':
-    # arbitrary arguments
-    # result = average(1, 2, 3, 4, 5)
-    # print("The average is:", result)
+    x = 2
 
-    dict1 = {1: 'A', 2: 'B', 3: 'C'}
-
-    # List of the keys
-    keysList = list(dict1.keys())
-    print(keysList)
+    if x == 1:
+        print(True)
+    else:
+        None
