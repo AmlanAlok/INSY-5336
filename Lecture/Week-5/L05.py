@@ -34,9 +34,18 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual('non-positive', res(-1))
 
     def test_warm_up_4(self):
-        pass
+        res = lambda x: 'positive' if x > 0 else ('negative' if x < 0 else 'zero')
+        self.assertEqual('positive', res(1))
+        self.assertEqual('negative', res(-1))
+        self.assertEqual('zero', res(0))
 
     def test_warm_up_5(self):
+        pass
+
+    def test_warm_up_6(self):
+        pass
+
+    def test_warm_up_7(self):
         pass
 
 
