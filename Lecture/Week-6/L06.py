@@ -1,4 +1,5 @@
 import unittest
+from functools import reduce
 
 
 class MyTestCase(unittest.TestCase):
@@ -33,9 +34,8 @@ class MyTestCase(unittest.TestCase):
         print(res)
 
     def test_05(self):
-        from functools import reduce
         nums = ['I', 'like', 'UTA']
-        res = reduce(lambda x, y: x + y, nums)
+        res = reduce(lambda x, y: x + ' ' + y, nums)
         print(res)
 
     def test_E01(self):
@@ -45,6 +45,10 @@ class MyTestCase(unittest.TestCase):
         res = list(map(lambda x, y: x + y, a, b))
         # print(res)
         self.assertEqual([6, 8, 10], list(map(lambda x, y: x + y, a, b)))
+
+    def test_E02(self):
+        a = 5
+        self.assertEqual(120, reduce(lambda x, t: t * x, range(1, a + 1)))
 
 
 if __name__ == '__main__':
