@@ -52,9 +52,5 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(5470.40, total)
 
 
-
-
-
-
 if __name__ == '__main__':
     unittest.main()
