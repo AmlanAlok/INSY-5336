@@ -60,6 +60,10 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual({3, 4}, duplicates)
 
+    def test_x(self):
+        for i in range(5):
+            print(i)
+
 
 if __name__ == '__main__':
     unittest.main()

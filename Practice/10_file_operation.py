@@ -51,6 +51,16 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual(5470.40, total)
 
+    def test_4(self):
+        path = './nums.txt'
+        with open(path, 'r') as file:
+            content = file.read()
+
+        nums = content.split('\n')
+        print(nums)
+
+        nums = [int(i) for i in nums]
+        print(nums)
 
 if __name__ == '__main__':
     unittest.main()
