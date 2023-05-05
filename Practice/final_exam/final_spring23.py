@@ -1,6 +1,8 @@
 import unittest
 import re
 
+'''Set A'''
+
 
 class MyTestCase(unittest.TestCase):
 
@@ -65,6 +67,15 @@ class MyTestCase(unittest.TestCase):
         pattern = "\w+@\w+"
         x = re.findall(pattern, text)
         print(x)
+
+    def test_8(self):
+        # 44
+        a = {1, 2, 3}
+        b = {2, 3, 4}
+
+        c = a.symmetric_difference_update(b)
+        # c = a.symmetric_difference(b)
+        print(a)
 
 
 if __name__ == '__main__':
