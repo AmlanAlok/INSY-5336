@@ -1,4 +1,5 @@
 import unittest
+import re
 
 
 class MyTestCase(unittest.TestCase):
@@ -46,18 +47,24 @@ class MyTestCase(unittest.TestCase):
         print(x)
 
     def test_5(self):
-        a = (1,2,3)
+        a = (1, 2, 3)
         b = a + (4, 5)
         print(b)
 
-    def test_5(self):
+    def test_6(self):
         for i in range(1, 5):
             for j in range(1, 5):
                 if i * j > 10:
                     break
-                print(i*j)
+                print(i * j)
             print('Inner')
         print('outer')
+
+    def test_7(self):
+        text = 'I am Amlan Alok. My email is amlanalok@gmail.com'
+        pattern = "\w+@\w+"
+        x = re.findall(pattern, text)
+        print(x)
 
 
 if __name__ == '__main__':
