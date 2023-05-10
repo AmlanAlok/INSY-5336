@@ -22,6 +22,12 @@ class MyTestCase(unittest.TestCase):
 
         # self.assertEqual(True, False)
 
+    def test_x(self):
+        if 1:
+            print('A')
+        else:
+            print('Z')
+
 
 if __name__ == '__main__':
     unittest.main()
