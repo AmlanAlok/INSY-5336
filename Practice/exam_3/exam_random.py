@@ -1,8 +1,13 @@
 import unittest
 import random
+import numpy as np
+
 
 
 class MyTestCase(unittest.TestCase):
+
+    def setUp(self) -> None:
+        print('\n')
 
     def test_1(self):
         x = random.random()     # Python uses the Mersenne Twister as the core generator
@@ -22,7 +27,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(True, 0 <= x <= 10)
 
     def test_2(self):
-        x = random.randrange(10, 10, 0)     # ValueError: empty range for randrange() (10, 10, 0)
+        x = random.randrange(10, 10, -1)     # ValueError: empty range for randrange() (10, 10, 0)
         print(x)
         self.assertEqual(True, 0 <= x <= 10)
 
@@ -31,6 +36,10 @@ class MyTestCase(unittest.TestCase):
     def test_3(self):
         rand = random.randrange(10, 9, -1)
         print(rand)
+
+    def test_4(self):
+        x = np.random.randn(8)
+        print(x)
 
 
 
