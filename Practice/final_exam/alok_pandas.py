@@ -16,8 +16,8 @@ class MyTestCase(unittest.TestCase):
 
         df = pd.DataFrame(zip(name, age, state), columns=['Name', 'Age', 'State'])
         print(df)
+        print(df.info())
         print(df.to_string())
-        pass
 
     def test_2(self):
         print(pd.__version__)
@@ -36,6 +36,32 @@ class MyTestCase(unittest.TestCase):
         myvar = pd.DataFrame(mydataset)
 
         print(myvar)
+        print(myvar.columns)
+        print(myvar.index)
+        print(myvar.shape)
+        print(myvar.head(2))
+        print(myvar.tail(2))
+        print(myvar.sample(2))
+        print('--------------')
+        print(myvar.describe())
+        print('--------------')
+        row, col = myvar.shape[0], myvar.shape[1]
+        print(f'Row = {row}, Col = {col}')
+
+    def test_32(self):
+        '''
+        A Pandas DataFrame is a 2 dimensional data structure, like a 2 dimensional array, or a table with rows and columns.
+        '''
+        mydataset = {
+            'cars': "BMW",
+            'passings': 3
+        }
+
+        myvar = pd.Series(mydataset)
+
+        print(myvar)
+        print(myvar['cars'])
+        print(myvar['passings'])
 
     def test_4(self):
         '''
@@ -65,7 +91,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_7(self):
         calories = {"day1": 420, "day2": 380, "day3": 390}
-        myvar = pd.Series(calories, index=["day1", "day2"])     # this will not read the 3rd data point
+        myvar = pd.Series(calories, index=["day1", "day2"])  # this will not read the 3rd data point
         print(myvar)
 
     def test_8(self):
@@ -85,6 +111,9 @@ class MyTestCase(unittest.TestCase):
         # use a list of indexes:
         print(df.loc[[0, 1]])
 
+        # iloc is usd for integer based indexing
+        print(df.iloc[:, 1])
+
     def test_9(self):
         # Named Indexes
         data = {
@@ -98,6 +127,53 @@ class MyTestCase(unittest.TestCase):
         # refer to the named index:
         print(df.loc["day2"])
         print(pd.options.display.max_rows)
+
+    def test_10(self):
+        s1 = pd.Series()
+        print(s1)
+
+    def test_11(self):
+        s1 = pd.Series([1, 2, 3, 4, 5])
+        print(s1)
+        print(s1.index)
+        print(s1.values)
+
+    def test_12(self):
+        age = {'Bob': 45, 'Alex': 55, 'Sarah': 25}
+        s3 = pd.Series(age)
+        print(s3)
+        s4 = pd.Series(age, index=['Sarah', 'Bob', 'Alex', 'Milton'])
+        print(s4)
+
+    def test_13(self):
+        df1 = pd.DataFrame()
+        print(type(df1))
+        print(df1)
+        print(df1.columns)
+        print(df1.index)
+
+    def test_14(self):
+        '''ValueError: All arrays must be of the same length'''
+
+        df = pd.DataFrame({
+            'Name': ['Abbas', 'Rohit', 'Micky'],
+            'Birthyear': [1970, 1984, 2013, 2016]
+        })
+
+        df['age'] = df['Birthyear'].apply(lambda x: (2022 - x) + 5)
+        print(df['age'])
+
+    def test_15(self):
+        pass
+
+    def test_16(self):
+        pass
+
+    def test_17(self):
+        pass
+
+    def test_18(self):
+        pass
 
 
 if __name__ == '__main__':
