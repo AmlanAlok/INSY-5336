@@ -1,11 +1,15 @@
 import unittest
 import numpy as np
+import re
 
 
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
         print('\n')
+
+    def test_x2(self):
+        text = "@2022"
 
     def test_1(self):
         x = ['uta', 'unt', 'utd', 'mit', 'ucla']
