@@ -38,6 +38,11 @@ class MyTestCase(unittest.TestCase):
         out = True if a else False
         self.assertEqual(True, out)
 
+    def test_03(self):
+
+        x = 'a' + str(1)
+        print(x)
+
 
 if __name__ == '__main__':
     unittest.main()
