@@ -49,6 +49,11 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual([1, 2], a + [2])
         self.assertEqual(None, a.append(2))
 
+        b = a + [2]
+        a.append(2)
+
+        self.assertEqual(b, a)
+
 
 if __name__ == '__main__':
     unittest.main()
