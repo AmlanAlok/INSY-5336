@@ -43,6 +43,12 @@ class MyTestCase(unittest.TestCase):
         x = 'a' + str(1)
         print(x)
 
+    def test_04(self):
+
+        a = [1]
+        self.assertEqual([1, 2], a + [2])
+        self.assertEqual(None, a.append(2))
+
 
 if __name__ == '__main__':
     unittest.main()
